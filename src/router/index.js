@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Libros from '../views/Libros.vue'
-import Llamas from '../views/EnLlamas.vue'
-import Balada from '../views/Balada.vue'
-import Amanecer from '../views/Amanecer.vue'
-import Juegos from '../views/JuegosDelHambre.vue'
+import Libros from '../views/Libros/Libros.vue/index.js'
+import Llamas from '../views/Libros/EnLlamas.vue/index.js'
+import Balada from '../views/Libros/Balada.vue'
+import Amanecer from '../views/Libros/Amanecer.vue/index.js'
+import Juegos from '../views/Libros/JuegosDelHambre.vue'
 import Galeria from '../views/Galeria.vue'
 import Patrocinio from '../views/Patrocinio.vue'
-import Sinsajo from '../views/Sinsajo.vue'
+import Sinsajo from '../views/Libros/Sinsajo.vue'
 const routes = [
 { path: '/', component: Home },
 { path: '/libros', component: Libros },
