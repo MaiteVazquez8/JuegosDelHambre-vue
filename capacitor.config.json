@@ -1,0 +1,6 @@
+{
+  "appId": "com.maite.juegosDelHambre",
+  "appName": "juegosdelhambre",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
