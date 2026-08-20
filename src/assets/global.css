@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+ 
+:root {
+  --negro: #060606;
+  --negro-suave: #101010;
+  --carbon: #1a1a1a;
+  --dorado: #cf9f2e;
+  --dorado-claro: #e9c568;
+  --dorado-opaco: #8a742c;
+  --texto: #ece6d6;
+  --texto-tenue: #a89f8c;
+  --borde: rgba(207, 159, 46, 0.25);
+  --sombra: rgba(0, 0, 0, 0.65);
+  --fuente-titulo: 'Cinzel', serif;
+  --fuente-texto: 'Inter', sans-serif;
+  --radio: 6px;
+  --transicion: 0.35s ease;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  background: var(--negro);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  line-height: 1.65;
+}
+ 
+h1,
+h2,
+h3 {
+  margin: 0 0 0.6em;
+  color: var(--dorado-claro);
+  font-family: var(--fuente-titulo);
+  letter-spacing: 0.03em;
+}
+ 
+h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+ 
+h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+ 
+h3 {
+  padding-left: 0.6em;
+  border-left: 3px solid var(--dorado);
+  color: var(--texto);
+  font-size: 1.15rem;
+}
+ 
+p {
+  margin: 0 0 1em;
+  color: var(--texto-tenue);
+}
+ 
+hr {
+  margin: 0.4em 0 1.2em;
+  border: 0;
+  border-top: 1px solid var(--borde);
+}
+ 
+a {
+  color: var(--dorado-claro);
+  text-decoration: none;
+  transition: color var(--transicion);
+}
+ 
+img {
+  display: block;
+  max-width: 100%;
+}
+ 
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.8em;
+  border: 1px solid var(--dorado);
+  border-radius: var(--radio);
+  background: transparent;
+  color: var(--dorado-claro);
+  font-family: var(--fuente-titulo);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--transicion);
+}
+ 
+.btn:hover {
+  background: var(--dorado);
+  box-shadow: 0 8px 20px var(--sombra);
+  color: var(--negro);
+  transform: translateY(-2px);
+}
+ 
+.link {
+  border-bottom: 1px solid transparent;
+  color: var(--dorado);
+  font-weight: 500;
+  transition: all var(--transicion);
+}
+ 
+.link:hover {
+  border-color: var(--dorado-claro);
+  color: var(--dorado-claro);
+}

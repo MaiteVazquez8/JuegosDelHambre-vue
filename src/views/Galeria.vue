@@ -1,7 +1,3 @@
-<script>
-import '../assets/galeria.css'
-</script>
-
 <template>
   <section class="page page-home">
     <div class="hero hero-home">

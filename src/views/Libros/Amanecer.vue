@@ -1,5 +1,8 @@
-<script>
-import '../assets/amanecer.css'
+<script setup>
+import '../../assets/ficha-libro.css'
+import { ref } from 'vue'
+
+const mostrarSpoiler = ref(false)
 </script>
 
 <template>
@@ -9,7 +12,7 @@ import '../assets/amanecer.css'
             <p>Amanecer en la cosecha es una novela juvenil de distópica —y precuela de la trilogía de Los Juegos del Hambre— escrita por la autora estadounidense Suzanne Collins. Está ambientada veinticuatro años antes de los eventos de Los Juegos del Hambre, comenzando la mañana de la cosecha de los 50.os Juegos del Hambre, también conocidos como el segundo Vasallaje de los Veinticinco[1].</p>
             <p>El libro fue anunciado el 6 de junio de 2024 por Scholastic Press, y fijado su lanzamiento oficial en inglés el 18 de marzo de 2025. Su traducción oficial al español fue lanzada dos días después, el 20 de marzo de 2025 por la editorial Molino.</p>
             <p>Una adaptación cinematográfica también fue anunciada y se estrenará el 20 de noviembre de 2026[2].</p>
-            <img src="../Media/amanecer.jpg" alt="Amanecer en la cosecha" class="imagen">
+            <img src="../../Media/Libros/Portadas/libro5.webp" alt="Amanecer en la cosecha" class="imagen">
         </div>
         <div class="Informacion">
             <h2>Sinopsis</h2>
@@ -18,9 +21,11 @@ import '../assets/amanecer.css'
             <p>Amanece el día de los Quincuagésimos Juegos del Hambre y el miedo atenaza a los distritos de Panem. Este año, en honor al Vasallaje de los Veinticinco, se llevarán de sus hogares al doble de tributos.</p>
             <p>En el Distrito 12, Haymitch Abernathy intenta no pensar demasiado en sus probabilidades. Lo único que le importa es que se acabe el día para poder estar con su chica.</p>
             <p>Cuando anuncian el nombre de Haymitch, todos sus sueños se rompen en pedazos. Lo separan de su familia y de su amada, y lo envían al Capitolio con los otros tres tributos del Distrito 12: una amiga que es casi como una hermana pequeña para él, un chico obsesionado con analizar apuestas y la chica más estirada de la ciudad. Cuando empiezan los Juegos, Haymitch comprende que en el Capitolio quieren que fracase. Sin embargo, algo dentro de él desea luchar… y que el eco de esa lucha llegue mucho más allá de la mortífera arena.</p>
-            <img src="../Media/amanecer2.jpg" alt="Amanecer en la cosecha" class="imagen">
+            <img src="../../Media/Peliculas/amanecer.webp" alt="Amanecer en la cosecha" class="imagen">
             <h2>Trama</h2>
             <hr>
+            <div class="spoiler" :class="{ 'spoiler--revelado': mostrarSpoiler }">
+                <div class="spoiler__contenido">
             <h3>Parte I: La cosecha</h3>
             <p>Es la mañana de la cosecha de los 50.os Juegos del Hambre y las tensiones están por las nubes en el Distrito 12. Siempre es una época difícil, pero esta vez la situación es aún más tensa, ya que se trata de un Vasallaje de los Veinticinco y se ha anunciado que el doble de tributos habituales serán elegidos: dos chicos y dos chicas por distrito. Las cosas son especialmente tensas para Haymitch Abernathy, para quien hoy, 4 de julio, también es su cumpleaños. Él espera poder pasar la cosecha y disfrutar el resto del día con su amor, Lenore Dove, una chica de La Bandada que le dice que el hecho de que siempre haya habido una cosecha no significa que siempre la habrá.</p>
             <p>Durante la cosecha, las dos chicas elegidas del Distrito 12 son Louella McCoy y Maysilee Donner, mientras que los chicos elegidos son Wyatt Callow y Woodbine Chance. Sin embargo, Woodbine intenta escapar corriendo, pero es casi de inmediato asesinado con un disparo en la nuca. Después de esto, Lenore Dove intenta mantener alejados a los Agentes de Paz del cuerpo de Woodbine, lo que provoca que Haymitch intervenga y, como consecuencia, sea seleccionado como reemplazo de Woodbine. Casi lo suben directamente al tren hacia el Capitolio, pero gracias a la insistencia de Plutarch Heavensbee se le permite despedirse, ya que hay pocas tomas de su reacción para la transmisión en el Capitolio.</p>
@@ -52,94 +57,45 @@ import '../assets/amanecer.css'
             <p>La llegada de Katniss con una cesta de huevos de ganso inaugura una etapa de cuidado y esperanza en la vida de Haymitch. Con una incubadora diseñada por Peeta, las crías eclosionan y lo reconocen como su primera figura, convirtiéndose en presencia constante y en una rutina que ordena sus días. Los paseos hasta la Pradera consolidan ese pequeño refugio: si Lenore está contenta, él también lo está; el emparejamiento de por vida de los gansos opera como metáfora de su lealtad emocional hacia Lenore.</p>
             <p>Reconoce el deterioro de su hígado y su relación con la bebida, ahora más hábito que evasión. Acepta la finitud sin dramatismo y afirma con certeza que el Capitolio nunca podrá arrebatarle a Lenore, porque jamás la tuvo. En ese punto, su pertenencia se redefine: lo más preciado de su vida no es un objeto ni una victoria, sino la constancia de un amor que atraviesa la memoria y la pérdida.</p>
             <p>Para Haymitch, Lenore Dove no es solo pasado: es el punto de llegada. Ella siempre fue su hogar.</p>
-            <img src="../Media/amanecer3.jpg" alt="Amanecer en la cosecha" class="imagen">
+            <img src="../../Media/Peliculas/amanecer2.webp" alt="Amanecer en la cosecha" class="imagen">
+                    <button v-if="mostrarSpoiler" type="button" class="btn-spoiler btn-spoiler--ocultar" @click="mostrarSpoiler = false">Ocultar spoilers</button>
+                </div>
+                <button v-if="!mostrarSpoiler" type="button" class="spoiler__revelar" @click="mostrarSpoiler = true">Revelar spoilers</button>
+            </div>
+
         </div>
         <div class="Personajes">
             <h2>Personajes</h2>
-            <hr>
-            <h3>Haymitch Abernathy</h3>
-            <img src="../Media/haymitch.jpg" alt="Haymitch Abernathy" class="imagen">
-            <p>Se le describe como un chico de 16 años, fuerte, ágil y con ojos grises mirada desafiante, de cabello oscuro, algo largo y desordenado. Es ingenioso, valiente y rebelde. Estratega nato, muy devoto de sus seres queridos, especialmente Lenore Dove.</p>
-            <h3>Maysilee Donner</h3>
-            <img src="../Media/maysilee.jpg" alt="Maysilee Donner" class="imagen">
-            <p>Se le describe como una joven de 16 años, delgada y elegante, con cabello rubio claro y ojos azules brillantes, porte acomodado. Es sarcástica, desafiante y resentida con el Capitolio. Aunque al inicio parece arrogante, se convierte en aliada de Haymitch y él llega a verla como una hermana.</p>
-            <h3>Lenore Dove</h3>
-            <img src="../Media/lenore.jpg" alt="Lenore Dove" class="imagen">
-            <p>Se le describe como una joven del Covey, delicada, con cabello castaño oscuro ondulado y ojos verdes soñadores. Es visionaria, rebelde y soñadora. Inspira a Haymitch a imaginar un futuro sin el Capitolio.</p>
-            Coriolanus Snow
-Se le describe como un hombre elegante, de cabello rubio platino ya canoso y ojos azules fríos. Es cruel, tiránico y obsesionado con el poder. Manipulador, elimina a cualquiera que amenace su autoridad.
-
-Plutarch Heavensbee
-Se le describe como un hombre de complexión media, cabello castaño corto y ojos marrones atentos. Es ambicioso, calculador y pragmático. Rebelde en secreto, ofrece información clave a Haymitch.
-
-Wyatt Callow
-Se le describe como un joven delgado, cabello negro liso y ojos oscuros observadores. Es excéntrico, analítico y observador. Usa su habilidad de pronosticador para sobrevivir.
-
-Louella McCoy
-Se le describe como una niña de 13 años, pequeña y alegre, con cabello castaño claro en trenzas y ojos avellana vivaces. Es espontánea, cariñosa y soñadora. Muere en el desfile de tributos.
-
-Lou Lou
-Se le describe como un doble reconstruido quirúrgicamente, con cabello oscuro rígido y ojos vacíos sin brillo. Es pasiva, manipulada y controlada por el Capitolio.
-
-Ampert
-Se le describe como un niño de 12 años, delgado, cabello castaño claro y ojos grises curiosos. Es precoz, creativo y rebelde. Hijo de Beetee, idea la alianza de los Newcomers.
-
-Beetee
-Se le describe como un hombre mayor, delgado y frágil, con cabello canoso corto y ojos oscuros brillantes. Es ingenioso, técnico y rebelde. Mentor castigado por Snow, ayuda a sabotear el Capitolio.
-
-Wiress
-Se le describe como una mujer excéntrica, cabello rubio ceniza despeinado y ojos claros nerviosos. Es perceptiva, enigmática y obsesionada con patrones. Ayuda a descubrir pistas en el entrenamiento y la arena.
-
-Mags
-Se le describe como una mujer mayor, robusta, cabello blanco corto y ojos azules bondadosos. Es generosa, solidaria y protectora. Envía apoyo a Haymitch mediante paracaídas.
-
-Willamae “Ma” Abernathy
-Se le describe como una mujer trabajadora, rostro cansado, cabello oscuro recogido. Es protectora, resiliente y cariñosa. Cría sola a Haymitch y Sid.
-
-Sid Abernathy
-Se le describe como un niño pequeño, cabello oscuro, ojos brillantes fascinados por las estrellas. Es inocente, soñador y afectuoso.
-
-Drusilla Sickle
-Se le describe como una mujer elegante y vanidosa, cabello rubio cuidado, ojos fríos. Es altiva, despectiva y combativa. Desprecia a los tributos del 12.
-
-Effie Trinket
-Se le describe como una mujer alegre, con atuendos coloridos, cabello rubio perfectamente arreglado y ojos claros. Es eficiente, optimista y amable, aunque adoctrinada por la propaganda del Capitolio.
-
-Magno Stift
-Se le describe como un hombre descuidado, cabello oscuro, ojos apagados. Es incompetente, indiferente y desmotivado. Estilista sin interés en el Distrito 12.
-
-Panache
-Se le describe como un tributo fuerte y atlético del Distrito 1, cabello oscuro corto y ojos penetrantes. Es agresivo, arrogante y cruel.
-
-Silka
-Se le describe como una joven atlética del Distrito 1, cabello rubio oscuro y ojos azules. Es competitiva, feroz y calculadora. Última rival de Haymitch en la arena.
-
-Maritte
-Se le describe como una tributo fuerte del Distrito 4, cabello oscuro y ojos verdes. Es violenta, decidida y pragmática.
-
-Wellie
-Se le describe como una joven enfermiza, delgada, cabello castaño apagado y ojos claros cansados. Es tímida, resistente y sobreviviente.
-
-Caesar Flickerman
-Se le describe como un hombre carismático, cabello oscuro teñido, sonrisa impecable y ojos brillantes. Es encantador, teatral y manipulador.
-
-Proserpina y Vitus
-Se les describe como jóvenes universitarios, bien vestidos, cabello claro y ojos curiosos. Son bienintencionados, pero desconectados de la realidad de los distritos.
-
-Burdock Everdeen
-Se le describe como un hombre fuerte, cabello oscuro, ojos grises, con rasgos del Covey. Es leal, protector y amigo íntimo de Haymitch.
-
-Asterid March
-Se le describe como una mujer delicada, cabello castaño claro, ojos verdes suaves. Es cariñosa, sabia y compasiva. Madre de Katniss y Prim.
-
-Blair
-Se le describe como un joven del Distrito 12, cabello oscuro y ojos marrones. Es amistoso, leal, pero apartado por seguridad.
-
-Hattie Meeney
-Se le describe como una mujer ruda, cabello oscuro recogido, ojos penetrantes. Es práctica, astuta y negociante. Bootlegger del Distrito 12.
-
-Clerk Cermine y Tam Amber
-Se les describe como hombres mayores, cabello canoso, ojos severos. Son protectores, escépticos y tradicionales. Tíos de Lenore Dove.
+            <ul class="personajes-lista">
+                <li class="personaje"><h3>Haymitch Abernathy</h3><p>Se le describe como un chico de 16 años, fuerte, ágil y con ojos grises mirada desafiante, de cabello oscuro, algo largo y desordenado. Es ingenioso, valiente y rebelde. Estratega nato, muy devoto de sus seres queridos, especialmente Lenore Dove.</p></li>
+                <li class="personaje"><h3>Maysilee Donner</h3><p>Se le describe como una joven de 16 años, delgada y elegante, con cabello rubio claro y ojos azules brillantes, porte acomodado. Es sarcástica, desafiante y resentida con el Capitolio. Aunque al inicio parece arrogante, se convierte en aliada de Haymitch y él llega a verla como una hermana.</p></li>
+                <li class="personaje"><h3>Lenore Dove</h3><p>Se le describe como una joven del Covey, delicada, con cabello castaño oscuro ondulado y ojos verdes soñadores. Es visionaria, rebelde y soñadora. Inspira a Haymitch a imaginar un futuro sin el Capitolio.</p></li>
+                <li class="personaje"><h3>Coriolanus Snow</h3><p>Se le describe como un hombre elegante, de cabello rubio platino ya canoso y ojos azules fríos. Es cruel, tiránico y obsesionado con el poder. Manipulador, elimina a cualquiera que amenace su autoridad.</p></li>
+                <li class="personaje"><h3>Plutarch Heavensbee</h3><p>Se le describe como un hombre de complexión media, cabello castaño corto y ojos marrones atentos. Es ambicioso, calculador y pragmático. Rebelde en secreto, ofrece información clave a Haymitch.</p></li>
+                <li class="personaje"><h3>Wyatt Callow</h3><p>Se le describe como un joven delgado, cabello negro liso y ojos oscuros observadores. Es excéntrico, analítico y observador. Usa su habilidad de pronosticador para sobrevivir.</p></li>
+                <li class="personaje"><h3>Louella McCoy</h3><p>Se le describe como una niña de 13 años, pequeña y alegre, con cabello castaño claro en trenzas y ojos avellana vivaces. Es espontánea, cariñosa y soñadora. Muere en el desfile de tributos.</p></li>
+                <li class="personaje"><h3>Lou Lou</h3><p>Se le describe como un doble reconstruido quirúrgicamente, con cabello oscuro rígido y ojos vacíos sin brillo. Es pasiva, manipulada y controlada por el Capitolio.</p></li>
+                <li class="personaje"><h3>Ampert</h3><p>Se le describe como un niño de 12 años, delgado, cabello castaño claro y ojos grises curiosos. Es precoz, creativo y rebelde. Hijo de Beetee, idea la alianza de los Newcomers.</p></li>
+                <li class="personaje"><h3>Beetee</h3><p>Se le describe como un hombre mayor, delgado y frágil, con cabello canoso corto y ojos oscuros brillantes. Es ingenioso, técnico y rebelde. Mentor castigado por Snow, ayuda a sabotear el Capitolio.</p></li>
+                <li class="personaje"><h3>Wiress</h3><p>Se le describe como una mujer excéntrica, cabello rubio ceniza despeinado y ojos claros nerviosos. Es perceptiva, enigmática y obsesionada con patrones. Ayuda a descubrir pistas en el entrenamiento y la arena.</p></li>
+                <li class="personaje"><h3>Mags</h3><p>Se le describe como una mujer mayor, robusta, cabello blanco corto y ojos azules bondadosos. Es generosa, solidaria y protectora. Envía apoyo a Haymitch mediante paracaídas.</p></li>
+                <li class="personaje"><h3>Willamae “Ma” Abernathy</h3><p>Se le describe como una mujer trabajadora, rostro cansado, cabello oscuro recogido. Es protectora, resiliente y cariñosa. Cría sola a Haymitch y Sid.</p></li>
+                <li class="personaje"><h3>Sid Abernathy</h3><p>Se le describe como un niño pequeño, cabello oscuro, ojos brillantes fascinados por las estrellas. Es inocente, soñador y afectuoso.</p></li>
+                <li class="personaje"><h3>Drusilla Sickle</h3><p>Se le describe como una mujer elegante y vanidosa, cabello rubio cuidado, ojos fríos. Es altiva, despectiva y combativa. Desprecia a los tributos del 12.</p></li>
+                <li class="personaje"><h3>Effie Trinket</h3><p>Se le describe como una mujer alegre, con atuendos coloridos, cabello rubio perfectamente arreglado y ojos claros. Es eficiente, optimista y amable, aunque adoctrinada por la propaganda del Capitolio.</p></li>
+                <li class="personaje"><h3>Magno Stift</h3><p>Se le describe como un hombre descuidado, cabello oscuro, ojos apagados. Es incompetente, indiferente y desmotivado. Estilista sin interés en el Distrito 12.</p></li>
+                <li class="personaje"><h3>Panache</h3><p>Se le describe como un tributo fuerte y atlético del Distrito 1, cabello oscuro corto y ojos penetrantes. Es agresivo, arrogante y cruel.</p></li>
+                <li class="personaje"><h3>Silka</h3><p>Se le describe como una joven atlética del Distrito 1, cabello rubio oscuro y ojos azules. Es competitiva, feroz y calculadora. Última rival de Haymitch en la arena.</p></li>
+                <li class="personaje"><h3>Maritte</h3><p>Se le describe como una tributo fuerte del Distrito 4, cabello oscuro y ojos verdes. Es violenta, decidida y pragmática.</p></li>
+                <li class="personaje"><h3>Wellie</h3><p>Se le describe como una joven enfermiza, delgada, cabello castaño apagado y ojos claros cansados. Es tímida, resistente y sobreviviente.</p></li>
+                <li class="personaje"><h3>Caesar Flickerman</h3><p>Se le describe como un hombre carismático, cabello oscuro teñido, sonrisa impecable y ojos brillantes. Es encantador, teatral y manipulador.</p></li>
+                <li class="personaje"><h3>Proserpina y Vitus</h3><p>Se les describe como jóvenes universitarios, bien vestidos, cabello claro y ojos curiosos. Son bienintencionados, pero desconectados de la realidad de los distritos.</p></li>
+                <li class="personaje"><h3>Burdock Everdeen</h3><p>Se le describe como un hombre fuerte, cabello oscuro, ojos grises, con rasgos del Covey. Es leal, protector y amigo íntimo de Haymitch.</p></li>
+                <li class="personaje"><h3>Asterid March</h3><p>Se le describe como una mujer delicada, cabello castaño claro, ojos verdes suaves. Es cariñosa, sabia y compasiva. Madre de Katniss y Prim.</p></li>
+                <li class="personaje"><h3>Blair</h3><p>Se le describe como un joven del Distrito 12, cabello oscuro y ojos marrones. Es amistoso, leal, pero apartado por seguridad.</p></li>
+                <li class="personaje"><h3>Hattie Meeney</h3><p>Se le describe como una mujer ruda, cabello oscuro recogido, ojos penetrantes. Es práctica, astuta y negociante. Bootlegger del Distrito 12.</p></li>
+                <li class="personaje"><h3>Clerk Cermine y Tam Amber</h3><p>Se les describe como hombres mayores, cabello canoso, ojos severos. Son protectores, escépticos y tradicionales. Tíos de Lenore Dove.</p></li>
+            </ul>
         </div>
     </section>
     <section class="pelicula">
@@ -149,7 +105,7 @@ Se les describe como hombres mayores, cabello canoso, ojos severos. Son protecto
             <p>Lionsgate, productora encargada de adaptar los primeros tres libros a la pantalla grande, ha confirmado adaptar también una precuela de Los Juegos del Hambre, basada en una próxima novela de la escritora Suzanne Collins.</p>
             <p>“Como orgullosa productora de las películas de Los Juegos del Hambre, apenas podemos esperar a que se publique el próximo libro de Suzanne. Nos hemos estado comunicando con ella durante el proceso de escritura y esperamos seguir trabajando estrechamente con ella en la película". —Joe Drake, presidente del Grupo Lionsgate Motion Picture</p>
             <p>La pelicula, dirigida por Francis Lawrence, se estreno el 17 de noviembre de 2023. El guion fue escrito por Michael Lesslie y Michael Arndt. La película está protagonizada por Tom Blyth como Coriolanus Snow, Rachel Zegler como Lucy Gray Baird, Hunter Schafer como Tigris Snow, Jason Schwartzman como Lucretius "Lucky" Flickerman, Peter Dinklage como Casca Highbottom y Jason Mantzoukas como Dean Highbottom.</p>
-            <img src="../Media/balada4.jpg" alt="Balada de pajaros cantores y serpientes" class="imagen">
+            <img src="../../Media/Peliculas/amanecer3.webp" alt="Balada de pajaros cantores y serpientes" class="imagen">
         </div>
     </section>
 </template>
